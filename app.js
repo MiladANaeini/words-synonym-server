@@ -7,9 +7,12 @@ const getRoutes = require("./routes/gets");
 const postRoutes = require("./routes/posts");
 const putRoutes = require("./routes/puts");
 const deleteRoutes = require("./routes/deletes");
-
+const corsOption = {
+  origin: "*",
+  optionsSuccessStatus: 200,
+};
 //Middlewares
-app.use(cors());
+app.use(cors(corsOption));
 app.use(express.json());
 app.use("/words", getRoutes);
 app.use("/add", postRoutes);
@@ -22,6 +25,6 @@ app.get("/test", (req, res) => {
 //ROUTES
 
 //Start listening to the server
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log("Server is running on port 3000");
 });
