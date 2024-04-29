@@ -15,6 +15,9 @@ app.use("/words", getRoutes);
 app.use("/add", postRoutes);
 app.use("/add", putRoutes);
 app.use("/words", deleteRoutes);
+app.get("/test", (req, res) => {
+  res.send("Hello World!");
+});
 //CORS allows you to load resources from different origins
 //ROUTES
 
